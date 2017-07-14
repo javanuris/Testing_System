@@ -8,7 +8,7 @@ import javax.ws.rs.core.Response;
 import java.util.List;
 
 
-@Path("/messages")
+@Path("/")
 public class TestResource {
 
    TestService testService = new TestService();
@@ -16,9 +16,9 @@ public class TestResource {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
-    public Test getMessages(@PathParam("id") Integer id)
+    public Test getTest(@PathParam("id") Integer id)
     {
-      return testService.findBookById(id);
+      return testService.findTestById(id);
     }
 
     @GET
@@ -34,10 +34,9 @@ public class TestResource {
         return testService.createTest(test);
     }
 
-    @DELETE
-    @Path("/{param}")
-    public Response deleteMsg(@PathParam("param") String msg) {
-        String output = "DELETE:Jersey say : " + msg;
-        return Response.status(200).entity(output).build();
+    @Path("/{id}/questions")
+    public QuestionResource getQuestion()
+    {
+        return new QuestionResource();
     }
 }

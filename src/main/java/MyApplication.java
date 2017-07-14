@@ -1,3 +1,4 @@
+import resources.QuestionResource;
 import resources.TestResource;
 
 import javax.ws.rs.ApplicationPath;
@@ -16,6 +17,7 @@ public class MyApplication extends Application {
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
         h.add(TestResource.class);
+
         return h;
     }
 }

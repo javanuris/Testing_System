@@ -6,6 +6,9 @@ import dao.manager.DaoFactory;
 import entity.Question;
 import entity.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by User on 12.07.2017.
  */
@@ -26,20 +29,31 @@ public class QuestionService {
         return question;
     }
 
-    public Question findQuestionByTestId(int id) {
+    public Question findQuestionById(int id) {
         Question question = null;
         try (DaoFactory daoFactory = new DaoFactory()) {
-
             try {
                 QuestionDao questionDao = (QuestionDao) daoFactory.getDao(daoFactory.typeDao().getQuestionDao());
-                Test test = new Test();
-                test.setId(id);
-                question = questionDao.findQuestionByTest(test);
-
+                question = questionDao.findById(id);
             } catch (DaoException e) {
                 e.printStackTrace();
             }
         }
         return question;
+    }
+
+    public List<Question> findQuestionByTestId(int id) {
+        List<Question> questions = new ArrayList<>();
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                QuestionDao questionDao = (QuestionDao) daoFactory.getDao(daoFactory.typeDao().getQuestionDao());
+                Test test = new Test();
+                test.setId(id);
+                questions = questionDao.findQuestionByTest(test);
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return questions;
     }
 }

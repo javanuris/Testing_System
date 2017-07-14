@@ -9,6 +9,8 @@ import entity.Test;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by User on 12.07.2017.
@@ -68,21 +70,23 @@ public class MySqlQuestionDao extends BaseDao<Question> implements QuestionDao{
     }
 
     @Override
-    public Question findQuestionByTest(Test test) throws DaoException {
+    public List<Question> findQuestionByTest(Test test) throws DaoException {
         Question question = null;
+        List<Question> questions = new ArrayList<>();
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_TEST)) {
                 statement.setInt(1, test.getId());
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
                         question = itemTest(question, resultSet);
+                        questions.add(question);
                     }
                 }
             }
         } catch (SQLException e) {
             throw new DaoException("Can't find by id  ", e);
         }
-        return question;
+        return questions;
     }
 
     private Question itemTest(Question question, ResultSet resultSet) throws SQLException {

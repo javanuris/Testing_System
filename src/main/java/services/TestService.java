@@ -25,7 +25,7 @@ public class TestService {
         return test;
     }
 
-    public Test findBookById(int id){
+    public Test findTestById(int id) {
         Test test = null;
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
@@ -38,16 +38,16 @@ public class TestService {
         return test;
     }
 
-     public List<Test> getAllTests(){
-         List<Test> tests= null;
-         try (DaoFactory daoFactory = new DaoFactory()) {
-             try {
-                 TestDao testDao = (TestDao) daoFactory.getDao(daoFactory.typeDao().getTestDao());
-                 tests = testDao.getAllTests();
-             } catch (DaoException e) {
-                 e.printStackTrace();
-             }
-         }
-         return tests;
-     }
+    public List<Test> getAllTests() {
+        List<Test> tests = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                TestDao testDao = (TestDao) daoFactory.getDao(daoFactory.typeDao().getTestDao());
+                tests = testDao.getAllTests();
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return tests;
+    }
 }

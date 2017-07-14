@@ -9,6 +9,8 @@ import entity.Question;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by User on 12.07.2017.
@@ -41,7 +43,20 @@ public class MySqlAnswerDao extends BaseDao<Answer> implements AnswerDao {
 
     @Override
     public Answer findById(int id) throws DaoException {
-        return null;
+        Answer answer = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_ID)) {
+                statement.setInt(1, id);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        answer = itemAnswer(answer, resultSet);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Can't find by id  ", e);
+        }
+        return answer;
     }
 
     @Override
@@ -55,21 +70,23 @@ public class MySqlAnswerDao extends BaseDao<Answer> implements AnswerDao {
     }
 
     @Override
-    public Answer findAnswerByQuestion(Question question) throws DaoException {
+    public List<Answer> findAnswerByQuestion(Question question) throws DaoException {
         Answer answer = null;
+        List<Answer> answers = new ArrayList<>();
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_QUESTION)) {
                 statement.setInt(1, question.getId());
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
                         answer = itemAnswer(answer, resultSet);
+                        answers.add(answer);
                     }
                 }
             }
         } catch (SQLException e) {
             throw new DaoException("Can't find by id  ", e);
         }
-        return answer;
+        return answers;
     }
 
     private Answer itemAnswer(Answer answer, ResultSet resultSet) throws SQLException {
