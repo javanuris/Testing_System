@@ -1,4 +1,3 @@
-import resources.QuestionResource;
 import resources.TestResource;
 
 import javax.ws.rs.ApplicationPath;

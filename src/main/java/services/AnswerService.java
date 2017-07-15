@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class AnswerService {
 
-    public Answer createQuestion(Answer answer) throws DaoException {
+    public Answer createAnswer(Answer answer) throws DaoException {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
                 AnswerDao answerDao = (AnswerDao) daoFactory.getDao(daoFactory.typeDao().getAnswerDao());
