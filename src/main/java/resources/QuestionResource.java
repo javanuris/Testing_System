@@ -45,7 +45,6 @@ public class QuestionResource {
         Test test = new Test();
         test.setId(id);
         question.setTest(test);
-        System.out.println(question.getName() +"/"+question.getId());
         return questionService.createQuestion(question);
     }
 
