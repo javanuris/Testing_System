@@ -1,9 +1,12 @@
 package filters;
 
 import org.glassfish.jersey.internal.util.Base64;
+import org.springframework.security.access.annotation.Secured;
 
+import javax.ws.rs.NameBinding;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
@@ -13,7 +16,10 @@ import java.util.StringTokenizer;
 /**
  * Created by User on 16.07.2017.
  */
+
+
 @Provider
+
 public class SecurityFilter implements ContainerRequestFilter{
 
     private static final String AUTHORIZATION_HEADER_KEY = "Authorization";
@@ -24,14 +30,17 @@ public class SecurityFilter implements ContainerRequestFilter{
     public void filter(ContainerRequestContext containerRequestContext) throws IOException {
         if (containerRequestContext.getUriInfo().getPath().contains(SECURED_URL_PREFIX)) {
             List<String> authHeader = containerRequestContext.getHeaders().get(AUTHORIZATION_HEADER_KEY);
+
+
             if (authHeader!= null && authHeader.size() > 0) {
                 String authToken = authHeader.get(0);
                 authToken = authToken.replaceFirst(AUTHORIZATION_HEADER_PREFIX, "");
                 String decodedString = Base64.decodeAsString(authToken);
+
                 StringTokenizer tokenizer = new StringTokenizer(decodedString, ":");
+
                 String username = tokenizer.nextToken();
                 String password = tokenizer.nextToken();
-
                 if ("root".equals(username) && "root".equals(password)) {
                     return;
                 }

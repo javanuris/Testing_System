@@ -2,6 +2,7 @@ package resources;
 
 import entity.Test;
 import services.TestService;
+import utils.Secured;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

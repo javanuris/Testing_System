@@ -1,4 +1,6 @@
 import filters.AccessControlResponseFilter;
+import filters.AuthenticationFilter;
+import resources.AuthenticationEndpointResource;
 import filters.SecurityFilter;
 import resources.SecureResource;
 import resources.TestResource;
@@ -21,6 +23,8 @@ public class MyApplication extends Application {
         h.add(TestResource.class);
         h.add(SecureResource.class);
         h.add(SecurityFilter.class);
+        h.add(AuthenticationFilter.class);
+        h.add(AuthenticationEndpointResource.class);
         h.add(AccessControlResponseFilter.class);
 
 
