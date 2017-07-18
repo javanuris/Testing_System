@@ -6,6 +6,7 @@ import dao.exception.DaoException;
 import dao.manager.DaoFactory;
 import entity.Answer;
 import entity.Question;
+import entity.Result;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,5 +59,22 @@ public class AnswerService {
             }
         }
         return answers;
+    }
+
+    public Result pointCounter(ArrayList<Answer> answers){
+        Result result = new Result();
+        Integer pointCount = 0;
+
+
+        for(Answer answ : answers){
+            Answer answer = findAnswerById(answ.getId());
+            if(answer.getRight() == 1){
+                pointCount++;
+            }
+        }
+
+        result.setPointCount(pointCount);
+
+        return result;
     }
 }

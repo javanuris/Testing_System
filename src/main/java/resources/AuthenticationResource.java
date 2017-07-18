@@ -6,12 +6,9 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-/**
- * Created by User on 17.07.2017.
- */
 
 @Path("/authentication")
-public class AuthenticationEndpointResource {
+public class AuthenticationResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -37,7 +34,8 @@ public class AuthenticationEndpointResource {
 
         } catch (Exception e) {
             e.printStackTrace();
-            return Response.status(Response.Status.UNAUTHORIZED).build();        }
+            return Response.status(Response.Status.UNAUTHORIZED).build();
+        }
     }
 
     private void authenticate(String username, String password) throws Exception {

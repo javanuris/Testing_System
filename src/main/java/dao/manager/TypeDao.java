@@ -4,6 +4,7 @@ import connection.ConnectionPool;
 import dao.mysql.MySqlAnswerDao;
 import dao.mysql.MySqlQuestionDao;
 import dao.mysql.MySqlTestDao;
+import dao.mysql.MySqlUserDao;
 
 /**
  * The class serves to initiate the objects, depending on the type of database.
@@ -46,6 +47,14 @@ public class TypeDao {
             return MySqlAnswerDao.class;
         } else {
             return MySqlAnswerDao.class;
+        }
+    }
+
+    public Class getUserDao() {
+        if (connectType.getType().equalsIgnoreCase(MYSQL)) {
+            return MySqlUserDao.class;
+        } else {
+            return MySqlUserDao.class;
         }
     }
 
