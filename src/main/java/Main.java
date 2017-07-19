@@ -15,7 +15,7 @@ public class Main {
         System.out.println(token);
 
         UserService userService = new UserService();
-        User user = userService.findUserByPhone("87053876353");
+        User user = userService.findUserByToken("token1");
         System.out.println(user.getId()+ "/" + user.getToken() + "/" + user.getPhone()+ "/" + user.getPassword()+"/"+user.getRole());
 
 

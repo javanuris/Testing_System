@@ -3,6 +3,7 @@ package filters;
 import entity.Role;
 import entity.User;
 import org.glassfish.jersey.internal.util.Base64;
+import services.UserService;
 import utils.Secured;
 
 import javax.annotation.Priority;
@@ -20,28 +21,35 @@ import java.io.IOException;
 @Priority(Priorities.AUTHENTICATION)
 public class SecurityFilter implements ContainerRequestFilter {
 
-
     @Override
     public void filter(ContainerRequestContext requestContext) throws IOException {
+        User user = null;
         String authorizationHeader =
                 requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
 
-        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Basic ")) {
             throw new NotAuthorizedException("Authorization header must be provided");
         }
 
-        String token = authorizationHeader.substring("Bearer".length()).trim();
+        String token = authorizationHeader.substring("Basic".length()).trim();
 
-        requestContext.setSecurityContext(new SecurityContextImpl(null));
-
-
-        Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).entity("User con not accsses to the this resources").build();
-        requestContext.abortWith(unauthorizedStatus);
+        try {
+            user = validateToken(token, requestContext);
+            requestContext.setSecurityContext(new SecurityContextImpl(user));
+        } catch (Exception e) {
+            Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).entity("User con not accsses to the this resources").build();
+            requestContext.abortWith(unauthorizedStatus);
+        }
     }
 
-    private void validateToken(String token) throws Exception {
-        // Check if it was issued by the server and if it's not expired
-        // Throw an Exception if the token is invalid
+    private User validateToken(String token,ContainerRequestContext requestContext) throws Exception {
+        UserService userService = new UserService();
+        User user = userService.findUserByToken(token);
+        if (user == null) {
+            Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).entity("User con not accsses to the this resources").build();
+            requestContext.abortWith(unauthorizedStatus);
+        }
+        return user;
     }
 }
 

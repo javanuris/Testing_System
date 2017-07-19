@@ -16,8 +16,10 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
+@Secured
 @Path("/")
 public class TestResource {
+    @Context SecurityContext securityContext;
 
     TestService testService = new TestService();
 
@@ -28,7 +30,16 @@ public class TestResource {
         return testService.findTestById(id);
     }
 
-  
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/test")
+    public User test() {
+        Principal principal = securityContext.getUserPrincipal();
+        String userName = principal.getName();
+        User user = new User();
+        user.setPhone(userName);
+        return user;
+    }
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

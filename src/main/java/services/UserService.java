@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * Created by User on 18.07.2017.
  */
+
 public class UserService {
 
 
@@ -61,7 +62,7 @@ public class UserService {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
                 UserDao userDao = (UserDao) daoFactory.getDao(daoFactory.typeDao().getUserDao());
-                user = userDao.findUserByPhone(token);
+                user = userDao.findUserByToken(token);
             } catch (DaoException e) {
                 e.printStackTrace();
             }
