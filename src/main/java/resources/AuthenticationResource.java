@@ -16,6 +16,16 @@ import java.util.Random;
 public class AuthenticationResource {
     UserService userService = new UserService();
 
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public Credentials getAllTests() {
+        Credentials credentials = new Credentials();
+        credentials.setUsername("87053876353");
+        credentials.setPassword("123456");
+        return credentials;
+    }
+
     @POST
     @Produces("application/json")
     @Consumes("application/json")

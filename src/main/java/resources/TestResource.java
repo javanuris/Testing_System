@@ -16,7 +16,6 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
-@Secured
 @Path("/")
 public class TestResource {
     @Context SecurityContext securityContext;

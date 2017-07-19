@@ -62,6 +62,14 @@ public class TypeDao {
             return MySqlRoleDao.class;
         }
     }
+    public Class getUserTestDao() {
+        if (connectType.getType().equalsIgnoreCase(MYSQL)) {
+            return MySqlUserTestDao.class;
+        } else {
+            return MySqlUserTestDao.class;
+        }
+    }
+
     public static TypeDao getInstance() {
         if (typeDao == null) {
             typeDao = new TypeDao();

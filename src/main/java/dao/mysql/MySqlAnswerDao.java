@@ -19,7 +19,6 @@ public class MySqlAnswerDao extends BaseDao<Answer> implements AnswerDao {
 
     private static final String FIND_BY_ID = "SELECT * FROM answers WHERE answer_id = ?";
     private static final String INSERT = "INSERT INTO answers VALUES(answer_id,?,?,?)";
-    private static final String UPDATE = "UPDATE questions SET name = ?,right = ?,question_id = ? WHERE answer_id = ?";
     private static final String DELETE = "DELETE FROM answers WHERE answer_id = ?";
     private static final String FIND_BY_QUESTION = "SELECT answers.answer_id , answers.name, answers.right, answers.question_id FROM answers JOIN questions ON questions.question_id  = answers.question_id WHERE  questions.question_id = ?";
 

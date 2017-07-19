@@ -81,18 +81,6 @@ public class MySqlTestDao extends BaseDao<Test> implements TestDao {
         }
     }
 
-    private Test itemTest(Test test, ResultSet resultSet) throws SQLException {
-        test = new Test();
-        test.setId(resultSet.getInt(1));
-        test.setName(resultSet.getString(2));
-        return test;
-    }
-
-    private PreparedStatement statementTest(PreparedStatement statement, Test item) throws SQLException {
-        statement.setString(1, item.getName());
-        return statement;
-    }
-
     @Override
     public List<Test> getAllTests() throws DaoException {
         List<Test> list = new ArrayList<>();
@@ -111,4 +99,17 @@ public class MySqlTestDao extends BaseDao<Test> implements TestDao {
         }
         return list;
     }
+
+    private Test itemTest(Test test, ResultSet resultSet) throws SQLException {
+        test = new Test();
+        test.setId(resultSet.getInt(1));
+        test.setName(resultSet.getString(2));
+        return test;
+    }
+
+    private PreparedStatement statementTest(PreparedStatement statement, Test item) throws SQLException {
+        statement.setString(1, item.getName());
+        return statement;
+    }
+
 }

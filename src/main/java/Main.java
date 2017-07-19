@@ -1,8 +1,12 @@
+import entity.Test;
 import entity.User;
+import entity.UserTest;
 import services.UserService;
+import services.UserTestService;
 
 import java.math.BigInteger;
 import java.security.SecureRandom;
+import java.util.Date;
 import java.util.Random;
 
 /**
@@ -10,15 +14,21 @@ import java.util.Random;
  */
 public class Main {
     public static void main(String[] args) {
-        Random random = new SecureRandom();
-        String token = new BigInteger(130, random).toString(32);
-        System.out.println(token);
 
-        UserService userService = new UserService();
-        User user = userService.findUserByToken("token1");
-        System.out.println(user.getId()+ "/" + user.getToken() + "/" + user.getPhone()+ "/" + user.getPassword()+"/"+user.getRole());
+        UserTestService userTestService = new UserTestService();
 
+        Test test = new Test();
+        test.setId(1);
 
+        User user = new User();
+        user.setId(2);
+
+        UserTest userTest1 = new UserTest();
+        userTest1.setUser(user);
+        userTest1.setTest(test);
+        userTest1.setPoints(10);
+        userTest1.setEndDate(new Date());
+         userTestService.createTest(userTest1);
 
     }
 }
