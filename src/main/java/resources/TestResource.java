@@ -3,12 +3,16 @@ package resources;
 import entity.Answer;
 import entity.Result;
 import entity.Test;
+import entity.User;
 import services.AnswerService;
 import services.TestService;
 import utils.Secured;
 
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.SecurityContext;
+import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,6 +27,8 @@ public class TestResource {
     public Test getTest(@PathParam("id") Integer id) {
         return testService.findTestById(id);
     }
+
+  
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)

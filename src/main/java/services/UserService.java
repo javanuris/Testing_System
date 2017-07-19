@@ -1,5 +1,6 @@
 package services;
 
+import dao.RoleDao;
 import dao.UserDao;
 import dao.exception.DaoException;
 import dao.manager.DaoFactory;
@@ -42,6 +43,32 @@ public class UserService {
         return user;
     }
 
+    public User findUserByPhone(String phone) {
+        User user = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                UserDao userDao = (UserDao) daoFactory.getDao(daoFactory.typeDao().getUserDao());
+                user = userDao.findUserByPhone(phone);
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return user;
+    }
+
+    public User findUserByToken(String token){
+        User user = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                UserDao userDao = (UserDao) daoFactory.getDao(daoFactory.typeDao().getUserDao());
+                user = userDao.findUserByPhone(token);
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return user;
+    }
+
     public User findUserByPhoneAndPassword(String phone, String password) {
         User user = null;
         try (DaoFactory daoFactory = new DaoFactory()) {
@@ -53,5 +80,19 @@ public class UserService {
             }
         }
         return user;
+    }
+
+    public void updateUser(User user){
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                UserDao userDao = (UserDao) daoFactory.getDao(daoFactory.typeDao().getUserDao());
+                RoleDao roleDao = (RoleDao) daoFactory.getDao(daoFactory.typeDao().getRoleDao());
+                Role role = roleDao.findRoleByUser(user);
+                user.setRole(role);
+                userDao.update(user);
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

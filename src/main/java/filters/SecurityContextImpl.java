@@ -29,7 +29,7 @@ public class SecurityContextImpl implements SecurityContext{
 
     @Override
     public boolean isUserInRole(String role) {
-        return (role.equals(user.getRole()));
+        return (role.equals(user.getRole().getName()));
     }
 
     @Override

@@ -1,10 +1,7 @@
 package dao.manager;
 
 import connection.ConnectionPool;
-import dao.mysql.MySqlAnswerDao;
-import dao.mysql.MySqlQuestionDao;
-import dao.mysql.MySqlTestDao;
-import dao.mysql.MySqlUserDao;
+import dao.mysql.*;
 
 /**
  * The class serves to initiate the objects, depending on the type of database.
@@ -58,6 +55,13 @@ public class TypeDao {
         }
     }
 
+    public Class getRoleDao() {
+        if (connectType.getType().equalsIgnoreCase(MYSQL)) {
+            return MySqlRoleDao.class;
+        } else {
+            return MySqlRoleDao.class;
+        }
+    }
     public static TypeDao getInstance() {
         if (typeDao == null) {
             typeDao = new TypeDao();

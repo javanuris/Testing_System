@@ -1,35 +1,32 @@
 package resources;
 
 import entity.Credentials;
+import entity.User;
+import services.UserService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.math.BigInteger;
+import java.security.SecureRandom;
+import java.util.Random;
 
 
 @Path("/authentication")
 public class AuthenticationResource {
-
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Credentials getCredential(){
-        Credentials credentials = new Credentials();
-        credentials.setPassword("root");
-        credentials.setUsername("root");
-        return credentials;
-    }
+    UserService userService = new UserService();
 
     @POST
     @Produces("application/json")
     @Consumes("application/json")
     public Response authenticateUser(Credentials credentials) {
 
-        String username = credentials.getUsername();
+        String phone = credentials.getUsername();
         String password = credentials.getPassword();
 
         try {
-            authenticate(username, password);
-            String token = issueToken(username);
+            authenticate(phone, password);
+            String token = issueToken(phone);
             return Response.ok(token).build();
 
         } catch (Exception e) {
@@ -38,16 +35,22 @@ public class AuthenticationResource {
         }
     }
 
-    private void authenticate(String username, String password) throws Exception {
-        if ("root".equals(username) && "root".equals(password)) {
+    private void authenticate(String phone, String password) throws Exception {
+        User user = userService.findUserByPhoneAndPassword(phone, password);
+        if(user != null){
             return;
-        } else {
+        }else {
             throw new Exception();
         }
     }
 
-    private String issueToken(String username) {
-        return "nuris";
+    private String issueToken(String phone) {
+        Random random = new SecureRandom();
+        String token = new BigInteger(130, random).toString(32);
+        User user1 = userService.findUserByPhone(phone);
+        user1.setToken(token);
+        userService.updateUser(user1);
+        return token;
     }
 
 

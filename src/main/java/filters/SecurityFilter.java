@@ -1,47 +1,47 @@
 package filters;
 
+import entity.Role;
+import entity.User;
 import org.glassfish.jersey.internal.util.Base64;
 import utils.Secured;
 
 import javax.annotation.Priority;
+import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.Priorities;
 import javax.ws.rs.container.ContainerRequestContext;
 import javax.ws.rs.container.ContainerRequestFilter;
+import javax.ws.rs.core.HttpHeaders;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.ext.Provider;
 import java.io.IOException;
-import java.util.List;
-import java.util.StringTokenizer;
-
 
 @Secured
 @Provider
 @Priority(Priorities.AUTHENTICATION)
-public class SecurityFilter implements ContainerRequestFilter{
+public class SecurityFilter implements ContainerRequestFilter {
 
-    private static final String AUTHORIZATION_HEADER_KEY = "Authorization";
-    private static final String AUTHORIZATION_HEADER_PREFIX = "Basic ";
 
     @Override
-    public void filter(ContainerRequestContext containerRequestContext) throws IOException {
-            List<String> authHeader = containerRequestContext.getHeaders().get(AUTHORIZATION_HEADER_KEY);
+    public void filter(ContainerRequestContext requestContext) throws IOException {
+        String authorizationHeader =
+                requestContext.getHeaderString(HttpHeaders.AUTHORIZATION);
 
-
-            if (authHeader!= null && authHeader.size() > 0) {
-                String authToken = authHeader.get(0);
-                authToken = authToken.replaceFirst(AUTHORIZATION_HEADER_PREFIX, "");
-                String decodedString = Base64.decodeAsString(authToken);
-
-                StringTokenizer tokenizer = new StringTokenizer(decodedString, ":");
-
-                String username = tokenizer.nextToken();
-                String password = tokenizer.nextToken();
-                if ("root".equals(username) && "root".equals(password)) {
-                    return;
-                }
-
-            }
-            Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).entity("User con not accsses to the this resources").build();
-            containerRequestContext.abortWith(unauthorizedStatus);
+        if (authorizationHeader == null || !authorizationHeader.startsWith("Bearer ")) {
+            throw new NotAuthorizedException("Authorization header must be provided");
         }
+
+        String token = authorizationHeader.substring("Bearer".length()).trim();
+
+        requestContext.setSecurityContext(new SecurityContextImpl(null));
+
+
+        Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).entity("User con not accsses to the this resources").build();
+        requestContext.abortWith(unauthorizedStatus);
+    }
+
+    private void validateToken(String token) throws Exception {
+        // Check if it was issued by the server and if it's not expired
+        // Throw an Exception if the token is invalid
+    }
 }
+

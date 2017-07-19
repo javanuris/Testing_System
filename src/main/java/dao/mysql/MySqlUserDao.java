@@ -14,8 +14,11 @@ import java.sql.SQLException;
  */
 public class MySqlUserDao extends BaseDao<User> implements UserDao {
     private static final String FIND_BY_ID = "SELECT * FROM users WHERE user_id = ?";
+    private static final String FIND_BY_TOKEN = "SELECT * FROM users WHERE token = ?";
+    private static final String FIND_BY_PHONE = "SELECT * FROM users WHERE phone = ?";
     private static final String INSERT = "INSERT INTO users VALUES (user_id,?,?,?,?)";
     private static final String FIND_BY_PHONE_PASSWORD = "SELECT * FROM users WHERE phone = ? AND password = ?";
+    private static final String UPDATE = "UPDATE users SET phone = ?,password = ?,token= ?,role_id = ? WHERE user_id = ?";
 
     @Override
     public User insert(User item) throws DaoException {
@@ -55,7 +58,15 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
 
     @Override
     public void update(User item) throws DaoException {
-
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(UPDATE)) {
+                statementCustomer(statement, item);
+                statement.setInt(5, item.getId());
+                statement.executeUpdate();
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't update customer = {} " + item, e);
+        }
     }
 
     @Override
@@ -65,7 +76,7 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
 
     @Override
     public User findUserByPhoneAndPassword(String phone, String password) throws DaoException {
-        User user= null;
+        User user = null;
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_PHONE_PASSWORD)) {
                 statement.setString(1, phone);
@@ -81,6 +92,43 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
         }
         return user;
     }
+
+    @Override
+    public User findUserByPhone(String phone) throws DaoException {
+        User user = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_PHONE)) {
+                statement.setString(1, phone);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        user = itemCustomer(user, resultSet);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't find by id ", e);
+        }
+        return user;
+    }
+
+    @Override
+    public User findUserByToken(String token) throws DaoException {
+        User user = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_TOKEN)) {
+                statement.setString(1, token);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        user = itemCustomer(user, resultSet);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't find by id ", e);
+        }
+        return user;
+    }
+
 
     private PreparedStatement statementCustomer(PreparedStatement statement, User item) throws SQLException {
         statement.setString(1, item.getPhone());
