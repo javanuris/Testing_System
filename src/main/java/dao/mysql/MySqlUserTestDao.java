@@ -10,7 +10,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by User on 19.07.2017.
@@ -18,6 +20,7 @@ import java.util.Date;
 public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
     private static final String FIND_BY_ID = "SELECT * FROM user_test WHERE user_test_id = ?";
     private static final String INSERT = "INSERT INTO user_test VALUES(user_test_id,?,?,?,?)";
+    private static final String FIND_BY_USER = "SELECT * FROM user_test WHERE user_id = ?";
 
     @Override
     public UserTest insert(UserTest item) throws DaoException {
@@ -74,5 +77,25 @@ public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
         statement.setInt(3 , item.getUser().getId());
         statement.setInt(4 , item.getTest().getId());
         return statement;
+    }
+
+    @Override
+    public List<UserTest> findUserTestByUser(User user) throws DaoException{
+        List<UserTest> userTests = new ArrayList<>();
+        UserTest userTest = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_USER)) {
+                statement.setInt(1, user.getId());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        userTest = itemTest(userTest, resultSet);
+                        userTests.add(userTest);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Can't find by id  ", e);
+        }
+        return userTests;
     }
 }

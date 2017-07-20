@@ -13,7 +13,7 @@ import javax.sql.rowset.serial.SerialException;
 import java.util.List;
 
 public class UserService {
-    
+
     public User createUser(User user) {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {

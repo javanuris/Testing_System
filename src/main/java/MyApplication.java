@@ -3,6 +3,7 @@ import resources.AuthenticationResource;
 import filters.SecurityFilter;
 import resources.RegistrationResource;
 import resources.TestResource;
+import resources.UserResource;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -19,6 +20,7 @@ public class MyApplication extends Application {
         HashSet h = new HashSet<Class<?>>();
         h.add(TestResource.class);
         h.add(RegistrationResource.class);
+        h.add(UserResource.class);
 
 
         h.add(SecurityFilter.class);
