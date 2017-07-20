@@ -1,6 +1,7 @@
 import filters.AccessControlResponseFilter;
 import resources.AuthenticationResource;
 import filters.SecurityFilter;
+import resources.RegistrationResource;
 import resources.TestResource;
 
 import javax.ws.rs.ApplicationPath;
@@ -17,6 +18,9 @@ public class MyApplication extends Application {
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
         h.add(TestResource.class);
+        h.add(RegistrationResource.class);
+
+
         h.add(SecurityFilter.class);
         h.add(AuthenticationResource.class);
         h.add(AccessControlResponseFilter.class);
