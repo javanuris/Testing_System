@@ -16,7 +16,6 @@ import java.util.Random;
 public class AuthenticationResource {
     UserService userService = new UserService();
 
-
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public Credentials getAllTests() {

@@ -6,6 +6,9 @@ import entity.Test;
 import entity.User;
 import services.AnswerService;
 import services.TestService;
+import services.UserService;
+import services.UserTestService;
+import services.exceptions.ServiceException;
 import utils.Secured;
 
 import javax.ws.rs.*;
@@ -16,6 +19,7 @@ import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
+@Secured
 @Path("/")
 public class TestResource {
     @Context SecurityContext securityContext;
@@ -60,7 +64,19 @@ public class TestResource {
     public Result resultPoint(ArrayList<Answer> answers)
     {
         AnswerService answerService = new AnswerService();
-        return answerService.pointCounter(answers);
+        Result result = answerService.pointCounter(answers);
+
+        UserService userService = new UserService();
+        User user = userService.findUserByPhone(securityContext.getUserPrincipal().getName());
+        UserTestService userTestService = new UserTestService();
+        
+        try {
+            userTestService.saveUserResult(user , result , answers.get(0));
+        } catch (ServiceException e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 
     @Path("/{id}/questions")

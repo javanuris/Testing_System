@@ -22,7 +22,6 @@ public class MyApplication extends Application {
         h.add(RegistrationResource.class);
         h.add(UserResource.class);
 
-
         h.add(SecurityFilter.class);
         h.add(AuthenticationResource.class);
         h.add(AccessControlResponseFilter.class);

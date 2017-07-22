@@ -16,9 +16,9 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
     private static final String FIND_BY_ID = "SELECT * FROM users WHERE user_id = ?";
     private static final String FIND_BY_TOKEN = "SELECT * FROM users WHERE token = ?";
     private static final String FIND_BY_PHONE = "SELECT * FROM users WHERE phone = ?";
-    private static final String INSERT = "INSERT INTO users VALUES (user_id,?,?,?,?)";
+    private static final String INSERT = "INSERT INTO users VALUES (user_id,?,?,?,?,?,?,?)";
     private static final String FIND_BY_PHONE_PASSWORD = "SELECT * FROM users WHERE phone = ? AND password = ?";
-    private static final String UPDATE = "UPDATE users SET phone = ?,password = ?,token= ?,role_id = ? WHERE user_id = ?";
+    private static final String UPDATE = "UPDATE users SET phone = ?,password = ?,token= ?,first_name =? , last_name = ? profession= ?,role_id = ? WHERE user_id = ?";
 
     @Override
     public User insert(User item) throws DaoException {
@@ -134,7 +134,10 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
         statement.setString(1, item.getPhone());
         statement.setString(2, item.getPassword());
         statement.setString(3, item.getToken());
-        statement.setInt(4, item.getRole().getId());
+        statement.setString(4, item.getFirstName());
+        statement.setString(5, item.getLastName());
+        statement.setString(6, item.getProfession());
+        statement.setInt(7, item.getRole().getId());
         return statement;
     }
 
@@ -144,6 +147,9 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
         user.setPhone(resultSet.getString(2));
         user.setPassword(resultSet.getString(3));
         user.setToken(resultSet.getString(4));
+        user.setFirstName(resultSet.getString(5));
+        user.setLastName(resultSet.getString(6));
+        user.setProfession(resultSet.getString(7));
         return user;
     }
 

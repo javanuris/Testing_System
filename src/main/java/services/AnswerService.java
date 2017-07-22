@@ -4,9 +4,7 @@ package services;
 import dao.AnswerDao;
 import dao.exception.DaoException;
 import dao.manager.DaoFactory;
-import entity.Answer;
-import entity.Question;
-import entity.Result;
+import entity.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +18,7 @@ public class AnswerService {
         try (DaoFactory daoFactory = new DaoFactory()) {
             try {
                 AnswerDao answerDao = (AnswerDao) daoFactory.getDao(daoFactory.typeDao().getAnswerDao());
-                if(answer.getRight() == null){
+                if (answer.getRight() == null) {
                     answer.setRight(0);
                 }
                 daoFactory.startTransaction();
@@ -46,6 +44,7 @@ public class AnswerService {
         }
         return answer;
     }
+
     public List<Answer> findAnswerByQuestionId(int id) {
         List<Answer> answers = new ArrayList<>();
         try (DaoFactory daoFactory = new DaoFactory()) {
@@ -61,20 +60,20 @@ public class AnswerService {
         return answers;
     }
 
-    public Result pointCounter(ArrayList<Answer> answers){
+    public Result pointCounter(ArrayList<Answer> answers) {
         Result result = new Result();
         Integer pointCount = 0;
 
-
-        for(Answer answ : answers){
+        for (Answer answ : answers) {
             Answer answer = findAnswerById(answ.getId());
-            if(answer.getRight() == 1){
+            if (answer.getRight() == 1) {
                 pointCount++;
             }
         }
 
         result.setPointCount(pointCount);
-
         return result;
     }
+
+
 }

@@ -8,6 +8,9 @@ public class RegistrationJson {
     private String password;
     private String repeatPassword;
     private Integer roleId;
+    private String firstName;
+    private String lastName;
+    private String profession;
 
     public String getPhone() {
         return phone;
@@ -39,5 +42,29 @@ public class RegistrationJson {
 
     public void setRoleId(Integer roleId) {
         this.roleId = roleId;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getProfession() {
+        return profession;
+    }
+
+    public void setProfession(String profession) {
+        this.profession = profession;
     }
 }

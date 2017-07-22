@@ -3,6 +3,7 @@ package services;
 import dao.TestDao;
 import dao.exception.DaoException;
 import dao.manager.DaoFactory;
+import entity.Answer;
 import entity.Question;
 import entity.Test;
 
@@ -34,7 +35,7 @@ public class TestService {
                 QuestionService questionService = new QuestionService();
 
                 test = testDao.findById(id);
-                if(test !=null) {
+                if (test != null) {
                     List<Question> questions = questionService.findQuestionByTestId(id);
                     test.setQuestions(questions);
                 }
@@ -59,5 +60,18 @@ public class TestService {
         return tests;
     }
 
-
+    public Test findTestByAnswer(int id) {
+        Answer answer = new Answer();
+        answer.setId(id);
+        Test test = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                TestDao testDao = (TestDao) daoFactory.getDao(daoFactory.typeDao().getTestDao());
+                test = testDao.findTestByAnswer(answer);
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return test;
+    }
 }

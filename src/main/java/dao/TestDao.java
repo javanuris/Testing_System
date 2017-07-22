@@ -1,6 +1,7 @@
 package dao;
 
 import dao.exception.DaoException;
+import entity.Answer;
 import entity.Test;
 
 import java.util.List;
@@ -10,4 +11,6 @@ import java.util.List;
  */
 public interface TestDao extends Dao<Test> {
     List<Test> getAllTests() throws DaoException;
+
+    Test findTestByAnswer(Answer answer) throws  DaoException;
 }

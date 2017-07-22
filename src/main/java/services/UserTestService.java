@@ -3,8 +3,8 @@ package services;
 import dao.UserTestDao;
 import dao.exception.DaoException;
 import dao.manager.DaoFactory;
-import entity.User;
-import entity.UserTest;
+import entity.*;
+import services.exceptions.ServiceException;
 
 import java.util.Date;
 import java.util.List;
@@ -55,5 +55,23 @@ public class UserTestService {
             }
         }
         return userTests;
+    }
+
+    public void saveUserResult(User user, Result result, Answer answer) throws ServiceException {
+        TestService testService = new TestService();
+        UserTest userTest = new UserTest();
+        Test test = testService.findTestByAnswer(answer.getId());
+        if (test != null) {
+            userTest.setTest(test);
+        } else {
+            throw new ServiceException("Test can not be null");
+        }
+        if (user != null) {
+            userTest.setUser(user);
+            userTest.setPoints(result.getPointCount());
+        } else {
+            throw new ServiceException("User can not be null");
+        }
+        createTest(userTest);
     }
 }

@@ -104,6 +104,9 @@ public class UserService {
                 user.setPhone(registrationJson.getPhone());
                 user.setRole(role);
                 user.setToken("0");
+                user.setFirstName(registrationJson.getFirstName());
+                user.setLastName(registrationJson.getLastName());
+                user.setProfession(registrationJson.getProfession());
                 user.setPassword(registrationJson.getPassword());
                 createUser(user);
             }else{

@@ -3,6 +3,7 @@ package dao.mysql;
 import dao.BaseDao;
 import dao.TestDao;
 import dao.exception.DaoException;
+import entity.Answer;
 import entity.Test;
 
 import java.sql.PreparedStatement;
@@ -20,6 +21,7 @@ public class MySqlTestDao extends BaseDao<Test> implements TestDao {
     private static final String UPDATE = "UPDATE tests SET name = ? WHERE test_id = ?";
     private static final String DELETE = "DELETE FROM tests WHERE test_id = ?";
     private static final String SELECT_ALL = "SELECT * FROM tests";
+    private static final String FIND_TEST_BY_ANSWER = "SELECT tests.test_id , tests.name FROM answers INNER JOIN questions ON questions.question_id  = answers.question_id INNER JOIN tests ON questions.test_id  = tests.test_id WHERE answers.answer_id = ?";
 
     @Override
     public Test insert(Test item) throws DaoException {
@@ -55,6 +57,8 @@ public class MySqlTestDao extends BaseDao<Test> implements TestDao {
         }
         return test;
     }
+
+
 
     @Override
     public void update(Test item) throws DaoException {
@@ -98,6 +102,24 @@ public class MySqlTestDao extends BaseDao<Test> implements TestDao {
             throw new DaoException("can't get all list ", e);
         }
         return list;
+    }
+
+    @Override
+    public Test findTestByAnswer(Answer answer) throws DaoException {
+        Test test = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(FIND_TEST_BY_ANSWER)) {
+                statement.setInt(1, answer.getId());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        test = itemTest(test, resultSet);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Can't find by answer  ", e);
+        }
+        return test;
     }
 
     private Test itemTest(Test test, ResultSet resultSet) throws SQLException {
