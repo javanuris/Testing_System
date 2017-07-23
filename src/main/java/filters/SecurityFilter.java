@@ -1,8 +1,6 @@
 package filters;
 
-import entity.Role;
 import entity.User;
-import org.glassfish.jersey.internal.util.Base64;
 import services.UserService;
 import utils.Secured;
 
@@ -37,7 +35,7 @@ public class SecurityFilter implements ContainerRequestFilter {
             user = validateToken(token, requestContext);
             requestContext.setSecurityContext(new SecurityContextImpl(user));
         } catch (Exception e) {
-            Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).entity("User con not accsses to the this resources").build();
+            Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).entity("User con not accsses to the this resources filter").build();
             requestContext.abortWith(unauthorizedStatus);
         }
     }
@@ -46,7 +44,7 @@ public class SecurityFilter implements ContainerRequestFilter {
         UserService userService = new UserService();
         User user = userService.findUserByToken(token);
         if (user == null) {
-            Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).entity("User con not accsses to the this resources").build();
+            Response unauthorizedStatus = Response.status(Response.Status.UNAUTHORIZED).entity("User con not accsses to the this resources validate").build();
             requestContext.abortWith(unauthorizedStatus);
         }
         return user;

@@ -74,4 +74,31 @@ public class UserTestService {
         }
         createTest(userTest);
     }
+
+    public UserTest findUserTestByLastTest(int testId, int userId) {
+        Test test = new Test();
+        test.setId(testId);
+
+        User user = new User();
+        user.setId(userId);
+
+        UserTest userTest = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                UserTestDao userTestDao = (UserTestDao) daoFactory.getDao(daoFactory.typeDao().getUserTestDao());
+                userTest = userTestDao.findUserTestByLastTest(test, user);
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return userTest;
+    }
+
+    public boolean checkRangeOfTimeFromLastTesting(int time, Date currentDate, Date lastTestingDate) {
+        if (currentDate.getTime() - lastTestingDate.getTime() > time) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }

@@ -14,9 +14,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.SecurityContext;
 import java.util.List;
 
-/**
- * Created by User on 20.07.2017.
- */
+
 @Secured
 @Path("/user")
 public class UserResource {
@@ -32,5 +30,4 @@ public class UserResource {
         User user = userService.findUserByPhone(securityContext.getUserPrincipal().getName());
         return userTestService.findUserTestByUser(user);
     }
-
 }

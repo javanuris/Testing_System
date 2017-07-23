@@ -3,6 +3,7 @@ package dao.mysql;
 import dao.BaseDao;
 import dao.UserTestDao;
 import dao.exception.DaoException;
+import entity.Test;
 import entity.User;
 import entity.UserTest;
 
@@ -21,6 +22,7 @@ public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
     private static final String FIND_BY_ID = "SELECT * FROM user_test WHERE user_test_id = ?";
     private static final String INSERT = "INSERT INTO user_test VALUES(user_test_id,?,?,?,?)";
     private static final String FIND_BY_USER = "SELECT * FROM user_test WHERE user_id = ?";
+    private static final String FIND_BY_LAST_DATE = "SELECT user_test.test_id , user_test.end_date , user_test.points,user_test.user_id ,user_test.test_id FROM user_test INNER JOIN tests ON tests.test_id  = user_test.test_id where tests.test_id = ? and user_test.user_id = ? ORDER BY user_test.end_date  DESC LIMIT 1";
 
     @Override
     public UserTest insert(UserTest item) throws DaoException {
@@ -97,5 +99,24 @@ public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
             throw new DaoException("Can't find by id  ", e);
         }
         return userTests;
+    }
+
+    @Override
+    public UserTest findUserTestByLastTest(Test test, User user) throws DaoException{
+        UserTest userTest = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_LAST_DATE)) {
+                statement.setInt(1, test.getId());
+                statement.setInt(2, user.getId());
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        userTest = itemTest(userTest, resultSet);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Can't find by id  ", e);
+        }
+        return userTest;
     }
 }
