@@ -80,7 +80,7 @@ public class TestResource {
         if (test != null) {
             try {
                 if (userTest != null) {
-                    if (userTestService.checkRangeOfTimeFromLastTesting(ONE_HOUR, new Date(), userTest.getEndDate())) {
+                    if (userTestService.checkRangeOfTimeFromLastTesting(test.getTiming()*ONE_HOUR, new Date(), userTest.getEndDate())) {
                         userTestService.saveUserResult(user, result, answers.get(0));
                     } else {
                         return null;
@@ -95,7 +95,22 @@ public class TestResource {
         return result;
     }
 
- 
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Path("/available/{testId}")
+    public Response isAvailableTest(@PathParam("testId") Integer testId) {
+        UserTestService userTestService = new UserTestService();
+        UserService userService = new UserService();
+        User user = userService.findUserByPhone(securityContext.getUserPrincipal().getName());
+
+        UserTest userTest = userTestService.findUserTestByLastTest(testId, user.getId());
+
+        if (userTest!=null && userTestService.checkRangeOfTimeFromLastTesting(ONE_HOUR, new Date(), userTest.getEndDate())) {
+            return Response.ok("1").build();
+        }else{
+            return Response.ok("0").build();        }
+    }
 
     @Path("/{id}/questions")
     public QuestionResource getQuestion() {

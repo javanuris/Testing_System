@@ -7,117 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d885ec36-33d0-449a-82ff-92f8b8cc5190" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/Main.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/MyApplication.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/MyApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/connection/ConnectionPool.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/connection/ConnectionPool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/connection/ResourcesQueue.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/connection/ResourcesQueue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/connection/exception/ConnectionException.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/connection/exception/ConnectionException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/connection/exception/ResourcesException.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/connection/exception/ResourcesException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/AnswerDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/AnswerDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/BaseDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/BaseDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/Dao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/Dao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/QuestionDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/QuestionDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/RoleDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/RoleDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/TestDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/TestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/UserDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/UserTestDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/UserTestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/exception/DaoException.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/exception/DaoException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/manager/DaoFactory.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/manager/DaoFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/manager/TypeDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/manager/TypeDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlAnswerDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlAnswerDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlQuestionDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlQuestionDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlRoleDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlRoleDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlTestDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlTestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlUserDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlUserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlUserTestDao.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/dao/mysql/MySqlUserTestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Answer.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Answer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/BaseEntity.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/BaseEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Credentials.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Credentials.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Question.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Question.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Result.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Result.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Role.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Role.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Test.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/User.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/UserTest.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/entity/UserTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/filters/AccessControlResponseFilter.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/filters/AccessControlResponseFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/filters/SecurityContextImpl$1.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/filters/SecurityContextImpl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/filters/SecurityContextImpl.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/filters/SecurityContextImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/filters/SecurityFilter.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/filters/SecurityFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/json/entity/RegistrationJson.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/json/entity/RegistrationJson.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/AnswerResource.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/AnswerResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/AuthenticationResource.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/AuthenticationResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/QuestionResource.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/QuestionResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/RegistrationResource.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/RegistrationResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/TestResource.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/TestResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/UserResource.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/resources/UserResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/AnswerService.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/AnswerService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/QuestionService.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/QuestionService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/TestService.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/TestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/UserService.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/UserTestService.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/UserTestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/exceptions/ServiceException.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/services/exceptions/ServiceException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/utils/Secured.class" afterPath="$PROJECT_DIR$/out/artifacts/test_project_glass_war_exploded/WEB-INF/classes/utils/Secured.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="$PROJECT_DIR$/target/classes/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/MyApplication.class" afterPath="$PROJECT_DIR$/target/classes/MyApplication.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/connection/ConnectionPool.class" afterPath="$PROJECT_DIR$/target/classes/connection/ConnectionPool.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/connection/ResourcesQueue.class" afterPath="$PROJECT_DIR$/target/classes/connection/ResourcesQueue.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/connection/exception/ConnectionException.class" afterPath="$PROJECT_DIR$/target/classes/connection/exception/ConnectionException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/connection/exception/ResourcesException.class" afterPath="$PROJECT_DIR$/target/classes/connection/exception/ResourcesException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/AnswerDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/AnswerDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/BaseDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/BaseDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/Dao.class" afterPath="$PROJECT_DIR$/target/classes/dao/Dao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/QuestionDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/QuestionDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/RoleDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/RoleDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/TestDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/TestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/UserDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/UserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/UserTestDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/UserTestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/exception/DaoException.class" afterPath="$PROJECT_DIR$/target/classes/dao/exception/DaoException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/manager/DaoFactory.class" afterPath="$PROJECT_DIR$/target/classes/dao/manager/DaoFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/manager/TypeDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/manager/TypeDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlAnswerDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlAnswerDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlQuestionDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlQuestionDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlRoleDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlRoleDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlTestDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlTestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlUserDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlUserDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlUserTestDao.class" afterPath="$PROJECT_DIR$/target/classes/dao/mysql/MySqlUserTestDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/Answer.class" afterPath="$PROJECT_DIR$/target/classes/entity/Answer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/BaseEntity.class" afterPath="$PROJECT_DIR$/target/classes/entity/BaseEntity.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/Credentials.class" afterPath="$PROJECT_DIR$/target/classes/entity/Credentials.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/Question.class" afterPath="$PROJECT_DIR$/target/classes/entity/Question.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/Result.class" afterPath="$PROJECT_DIR$/target/classes/entity/Result.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/Role.class" afterPath="$PROJECT_DIR$/target/classes/entity/Role.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/Test.class" afterPath="$PROJECT_DIR$/target/classes/entity/Test.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/User.class" afterPath="$PROJECT_DIR$/target/classes/entity/User.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/entity/UserTest.class" afterPath="$PROJECT_DIR$/target/classes/entity/UserTest.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/filters/AccessControlResponseFilter.class" afterPath="$PROJECT_DIR$/target/classes/filters/AccessControlResponseFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/filters/SecurityContextImpl$1.class" afterPath="$PROJECT_DIR$/target/classes/filters/SecurityContextImpl$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/filters/SecurityContextImpl.class" afterPath="$PROJECT_DIR$/target/classes/filters/SecurityContextImpl.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/filters/SecurityFilter.class" afterPath="$PROJECT_DIR$/target/classes/filters/SecurityFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/json/entity/RegistrationJson.class" afterPath="$PROJECT_DIR$/target/classes/json/entity/RegistrationJson.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources/AnswerResource.class" afterPath="$PROJECT_DIR$/target/classes/resources/AnswerResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources/AuthenticationResource.class" afterPath="$PROJECT_DIR$/target/classes/resources/AuthenticationResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources/QuestionResource.class" afterPath="$PROJECT_DIR$/target/classes/resources/QuestionResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources/RegistrationResource.class" afterPath="$PROJECT_DIR$/target/classes/resources/RegistrationResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources/TestResource.class" afterPath="$PROJECT_DIR$/target/classes/resources/TestResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/resources/UserResource.class" afterPath="$PROJECT_DIR$/target/classes/resources/UserResource.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/services/AnswerService.class" afterPath="$PROJECT_DIR$/target/classes/services/AnswerService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/services/QuestionService.class" afterPath="$PROJECT_DIR$/target/classes/services/QuestionService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/services/TestService.class" afterPath="$PROJECT_DIR$/target/classes/services/TestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/services/UserService.class" afterPath="$PROJECT_DIR$/target/classes/services/UserService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/services/UserTestService.class" afterPath="$PROJECT_DIR$/target/classes/services/UserTestService.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/services/exceptions/ServiceException.class" afterPath="$PROJECT_DIR$/target/classes/services/exceptions/ServiceException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/utils/Secured.class" afterPath="$PROJECT_DIR$/target/classes/utils/Secured.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/UserTestDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/UserTestDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/mysql/MySqlUserTestDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/mysql/MySqlUserTestDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/filters/SecurityFilter.java" afterPath="$PROJECT_DIR$/src/main/java/filters/SecurityFilter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/dao/mysql/MySqlTestDao.java" afterPath="$PROJECT_DIR$/src/main/java/dao/mysql/MySqlTestDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/entity/Test.java" afterPath="$PROJECT_DIR$/src/main/java/entity/Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/RegistrationResource.java" afterPath="$PROJECT_DIR$/src/main/java/resources/RegistrationResource.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/TestResource.java" afterPath="$PROJECT_DIR$/src/main/java/resources/TestResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/resources/UserResource.java" afterPath="$PROJECT_DIR$/src/main/java/resources/UserResource.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/services/UserTestService.java" afterPath="$PROJECT_DIR$/src/main/java/services/UserTestService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test_project_glass.iml" afterPath="$PROJECT_DIR$/test_project_glass.iml" />
     </list>
     <ignored path="test_project_glass.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -151,8 +44,8 @@
       <file leaf-file-name="TestResource.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/resources/TestResource.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="461">
-              <caret line="97" column="1" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
+            <state relative-caret-position="168">
+              <caret line="82" column="76" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="76" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -160,81 +53,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AuthenticationResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/resources/AuthenticationResource.java">
+      <file leaf-file-name="MySqlTestDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/dao/mysql/MySqlTestDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="42" column="73" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="73" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
-              <caret line="39" column="27" selection-start-line="39" selection-start-column="27" selection-end-line="39" selection-end-column="27" />
+            <state relative-caret-position="253">
+              <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1500815244643" expanded="true" signature="439:476" ph="SELECT * FRO... tests" />
+                <marker date="1500815244643" expanded="true" signature="521:558" ph="INSERT INTO tests... " />
+                <marker date="1500815244643" expanded="true" signature="603:646" ph="UPDATE tests... " />
+                <marker date="1500815244643" expanded="true" signature="691:726" ph="DELETE FROM " />
+                <marker date="1500815244643" expanded="true" signature="775:794" ph="SELECT * FRO... tests" />
+                <marker date="1500815244643" expanded="true" signature="852:1065" ph="SELECT tests... answers" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RegistrationResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/resources/RegistrationResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2">
-              <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="db.properties" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/db.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserResource.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/resources/UserResource.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySqlUserTestDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/mysql/MySqlUserTestDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="65">
-              <caret line="108" column="50" selection-start-line="108" selection-start-column="50" selection-end-line="108" selection-end-column="50" />
-              <folding>
-                <marker date="1500737546692" expanded="true" signature="527:573" ph="SELECT * FRO... user_test" />
-                <marker date="1500737546692" expanded="true" signature="618:668" ph="INSERT INTO user_test... " />
-                <marker date="1500737546692" expanded="true" signature="719:760" ph="INSERT INTO user_test... " />
-                <marker date="1500737546692" expanded="true" signature="816:1079" ph="SELECT user_... user_test" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserTestDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/dao/UserTestDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="16" column="77" selection-start-line="16" selection-start-column="77" selection-end-line="16" selection-end-column="77" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -242,7 +73,7 @@
       <file leaf-file-name="UserTestService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/services/UserTestService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
+            <state relative-caret-position="308">
               <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -254,9 +85,78 @@
       <file leaf-file-name="UserService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/services/UserService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
+            <state relative-caret-position="361">
               <caret line="109" column="65" selection-start-line="109" selection-start-column="65" selection-end-line="109" selection-end-column="65" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Test.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/entity/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-73">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding>
+                <element signature="e#374#375#0" expanded="true" />
+                <element signature="e#403#404#0" expanded="true" />
+                <element signature="e#448#449#0" expanded="true" />
+                <element signature="e#484#485#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AccessControlResponseFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/filters/AccessControlResponseFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityContextImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/filters/SecurityContextImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="166">
+              <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+              <folding>
+                <element signature="e#513#514#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SecurityFilter.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/filters/SecurityFilter.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-199">
+              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TestService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/services/TestService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1156">
+              <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RegistrationResource.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/resources/RegistrationResource.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="182">
+              <caret line="24" column="63" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="63" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -288,7 +188,6 @@
         <option value="$PROJECT_DIR$/src/main/java/dao/AnswerDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/AnswerResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Answer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/entity/Test.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/Question.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/QuestionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/filters/AccessControlResponseFilter.java" />
@@ -313,7 +212,6 @@
         <option value="$PROJECT_DIR$/src/main/java/entity/UserTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/RegistraionResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/exceptions/ServiceException.java" />
-        <option value="$PROJECT_DIR$/src/main/java/resources/RegistrationResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/MyApplication.java" />
         <option value="$PROJECT_DIR$/src/main/java/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/mysql/MySqlUserDao.java" />
@@ -321,7 +219,6 @@
         <option value="$PROJECT_DIR$/src/main/java/services/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/AuthenticationResource.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/TestDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/dao/mysql/MySqlTestDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/TestService.java" />
         <option value="$PROJECT_DIR$/src/main/java/services/AnswerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/dao/UserTestDao.java" />
@@ -333,6 +230,9 @@
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
         <option value="$PROJECT_DIR$/src/main/resources/db.properties" />
         <option value="$PROJECT_DIR$/src/main/java/services/UserTestService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/resources/RegistrationResource.java" />
+        <option value="$PROJECT_DIR$/src/main/java/entity/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/dao/mysql/MySqlTestDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/resources/TestResource.java" />
       </list>
     </option>
@@ -486,85 +386,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="utils" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_project_glass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_project_glass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="services" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_project_glass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_project_glass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_project_glass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test_project_glass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="filters" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1164,12 +986,12 @@
       <workItem from="1500055045150" duration="6253000" />
       <workItem from="1500109289562" duration="36000" />
       <workItem from="1500109515013" duration="102600000" />
-      <workItem from="1500476727357" duration="71274000" />
+      <workItem from="1500476727357" duration="77877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220164000" />
+    <option name="totallyTimeSpent" value="226767000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1201,7 +1023,7 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11764706" sideWeight="0.49394855" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26960784" sideWeight="0.7193646" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30882353" sideWeight="0.7193646" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="13" side_tool="false" content_ui="tabs" />
@@ -1291,16 +1113,6 @@
         <state relative-caret-position="111">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1470,24 +1282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/filters/SecurityContextImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
-          <folding>
-            <element signature="e#513#514#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/filters/AccessControlResponseFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="489">
@@ -1610,29 +1404,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/dao/mysql/MySqlTestDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <marker date="1500726238506" expanded="true" signature="439:476" ph="SELECT * FRO... tests" />
-            <marker date="1500726238506" expanded="true" signature="521:556" ph="INSERT INTO tests... " />
-            <marker date="1500726238506" expanded="true" signature="601:644" ph="UPDATE tests... " />
-            <marker date="1500726238506" expanded="true" signature="689:724" ph="DELETE FROM " />
-            <marker date="1500726238506" expanded="true" signature="773:792" ph="SELECT * FRO... tests" />
-            <marker date="1500726238506" expanded="true" signature="850:1048" ph="SELECT tests... answers" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/TestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1113">
-          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/TestDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1645,14 +1416,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
           <caret line="20" column="5" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/filters/SecurityFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1697,14 +1460,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="109" column="65" selection-start-line="109" selection-start-column="65" selection-end-line="109" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/dao/mysql/MySqlUserTestDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -1714,16 +1469,6 @@
             <marker date="1500737546692" expanded="true" signature="618:668" ph="INSERT INTO user_test... " />
             <marker date="1500737546692" expanded="true" signature="719:760" ph="INSERT INTO user_test... " />
             <marker date="1500737546692" expanded="true" signature="816:1079" ph="SELECT user_... user_test" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/services/UserTestService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1751,31 +1496,113 @@
         <state relative-caret-position="323">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/resources/RegistrationResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/AuthenticationResource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="181">
-          <caret line="42" column="73" selection-start-line="42" selection-start-column="18" selection-end-line="42" selection-end-column="73" />
+          <caret line="42" column="17" selection-start-line="42" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/filters/AccessControlResponseFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/filters/SecurityContextImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="17" column="21" selection-start-line="17" selection-start-column="21" selection-end-line="17" selection-end-column="21" />
+          <folding>
+            <element signature="e#513#514#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/filters/SecurityFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-199">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/resources/RegistrationResource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="24" column="63" selection-start-line="24" selection-start-column="51" selection-end-line="24" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/entity/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-73">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#403#404#0" expanded="true" />
+            <element signature="e#448#449#0" expanded="true" />
+            <element signature="e#484#485#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/dao/mysql/MySqlTestDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="134" column="25" selection-start-line="134" selection-start-column="25" selection-end-line="134" selection-end-column="25" />
+          <folding>
+            <marker date="1500815244643" expanded="true" signature="439:476" ph="SELECT * FRO... tests" />
+            <marker date="1500815244643" expanded="true" signature="521:558" ph="INSERT INTO tests... " />
+            <marker date="1500815244643" expanded="true" signature="603:646" ph="UPDATE tests... " />
+            <marker date="1500815244643" expanded="true" signature="691:726" ph="DELETE FROM " />
+            <marker date="1500815244643" expanded="true" signature="775:794" ph="SELECT * FRO... tests" />
+            <marker date="1500815244643" expanded="true" signature="852:1065" ph="SELECT tests... answers" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/UserTestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="109" column="65" selection-start-line="109" selection-start-column="65" selection-end-line="109" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/services/TestService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="75" column="5" selection-start-line="75" selection-start-column="5" selection-end-line="75" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/resources/TestResource.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="97" column="1" selection-start-line="97" selection-start-column="1" selection-end-line="97" selection-end-column="1" />
+        <state relative-caret-position="168">
+          <caret line="82" column="76" selection-start-line="82" selection-start-column="72" selection-end-line="82" selection-end-column="76" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

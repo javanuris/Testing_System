@@ -17,11 +17,11 @@ import java.util.List;
  */
 public class MySqlTestDao extends BaseDao<Test> implements TestDao {
     private static final String FIND_BY_ID = "SELECT * FROM tests WHERE test_id = ?";
-    private static final String INSERT = "INSERT INTO tests VALUES(test_id,?)";
+    private static final String INSERT = "INSERT INTO tests VALUES(test_id,?,?)";
     private static final String UPDATE = "UPDATE tests SET name = ? WHERE test_id = ?";
     private static final String DELETE = "DELETE FROM tests WHERE test_id = ?";
     private static final String SELECT_ALL = "SELECT * FROM tests";
-    private static final String FIND_TEST_BY_ANSWER = "SELECT tests.test_id , tests.name FROM answers INNER JOIN questions ON questions.question_id  = answers.question_id INNER JOIN tests ON questions.test_id  = tests.test_id WHERE answers.answer_id = ?";
+    private static final String FIND_TEST_BY_ANSWER = "SELECT tests.test_id , tests.name , tests.timing FROM answers INNER JOIN questions ON questions.question_id  = answers.question_id INNER JOIN tests ON questions.test_id  = tests.test_id WHERE answers.answer_id = ?";
 
     @Override
     public Test insert(Test item) throws DaoException {
@@ -126,11 +126,13 @@ public class MySqlTestDao extends BaseDao<Test> implements TestDao {
         test = new Test();
         test.setId(resultSet.getInt(1));
         test.setName(resultSet.getString(2));
+        test.setTiming(resultSet.getInt(3));
         return test;
     }
 
     private PreparedStatement statementTest(PreparedStatement statement, Test item) throws SQLException {
         statement.setString(1, item.getName());
+        statement.setInt(2, item.getTiming());
         return statement;
     }
 

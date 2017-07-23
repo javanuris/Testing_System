@@ -1,8 +1,6 @@
 package resources;
 
-import dao.exception.DaoException;
-import entity.Role;
-import entity.User;
+
 import json.entity.RegistrationJson;
 import services.UserService;
 import services.exceptions.ServiceException;
@@ -11,9 +9,7 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-/**
- * Created by User on 20.07.2017.
- */
+
 @Path("/registration")
 public class RegistrationResource {
 
