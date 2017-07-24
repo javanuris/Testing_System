@@ -22,12 +22,14 @@ import java.util.List;
 @Path("/")
 public class TestResource {
 
-    public static final int ONE_HOUR = 60 * 60 * 1000;
+    private static final int ONE_HOUR = 60 * 60 * 1000;
+    private static final int AVAILABLE_TEST_TRUE = 1;
+    private static final int AVAILABLE_TEST_FALSE = 0;
+    private static final int FIRST_ELEMENT = 0;
 
     @Context
     SecurityContext securityContext;
-
-    TestService testService = new TestService();
+    private TestService testService = new TestService();
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
@@ -64,7 +66,7 @@ public class TestResource {
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     @Path("/result")
-    public Result resultPoint(ArrayList<Answer> answers) {
+    public Response resultPoint(ArrayList<Answer> answers) {
         UserTestService userTestService = new UserTestService();
         AnswerService answerService = new AnswerService();
         TestService testService = new TestService();
@@ -73,26 +75,26 @@ public class TestResource {
         UserService userService = new UserService();
 
         User user = userService.findUserByPhone(securityContext.getUserPrincipal().getName());
-        Test test = testService.findTestByAnswer(answers.get(0).getId());
+        Test test = testService.findTestByAnswer(answers.get(FIRST_ELEMENT).getId());
 
         UserTest userTest = userTestService.findUserTestByLastTest(test.getId(), user.getId());
 
         if (test != null) {
             try {
                 if (userTest != null) {
-                    if (userTestService.checkRangeOfTimeFromLastTesting(test.getTiming()*ONE_HOUR, new Date(), userTest.getEndDate())) {
-                        userTestService.saveUserResult(user, result, answers.get(0));
+                    if (userTestService.checkRangeOfTimeFromLastTesting(test.getTiming() * ONE_HOUR, new Date(), userTest.getEndDate())) {
+                        userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT));
                     } else {
-                        return null;
+                        return Response.status(Response.Status.BAD_REQUEST).entity("You have already passed the test, wait for the next session").build();
                     }
                 } else {
-                    userTestService.saveUserResult(user, result, answers.get(0));
+                    userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT));
                 }
             } catch (ServiceException e) {
                 e.printStackTrace();
             }
         }
-        return result;
+        return Response.ok(result).build();
     }
 
     @POST
@@ -102,14 +104,21 @@ public class TestResource {
     public Response isAvailableTest(@PathParam("testId") Integer testId) {
         UserTestService userTestService = new UserTestService();
         UserService userService = new UserService();
-        User user = userService.findUserByPhone(securityContext.getUserPrincipal().getName());
+        TestService testService = new TestService();
+        Test test = testService.findTestById(testId);
 
+        User user = userService.findUserByPhone(securityContext.getUserPrincipal().getName());
         UserTest userTest = userTestService.findUserTestByLastTest(testId, user.getId());
 
-        if (userTest!=null && userTestService.checkRangeOfTimeFromLastTesting(ONE_HOUR, new Date(), userTest.getEndDate())) {
-            return Response.ok("1").build();
-        }else{
-            return Response.ok("0").build();        }
+        if (test != null) {
+            if (userTest != null && userTestService.checkRangeOfTimeFromLastTesting(test.getTiming() * ONE_HOUR, new Date(), userTest.getEndDate())) {
+                return Response.ok(AVAILABLE_TEST_TRUE).build();
+            } else {
+                return Response.ok(AVAILABLE_TEST_FALSE).build();
+            }
+        } else {
+            return Response.status(Response.Status.EXPECTATION_FAILED).entity("Test can't be null").build();
+        }
     }
 
     @Path("/{id}/questions")
