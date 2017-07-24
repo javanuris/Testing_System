@@ -20,9 +20,9 @@ import java.util.List;
  */
 public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
     private static final String FIND_BY_ID = "SELECT * FROM user_test WHERE user_test_id = ?";
-    private static final String INSERT = "INSERT INTO user_test VALUES(user_test_id,?,?,?,?)";
+    private static final String INSERT = "INSERT INTO user_test VALUES(user_test_id,?,?,?,?,?)";
     private static final String FIND_BY_USER = "SELECT * FROM user_test WHERE user_id = ?";
-    private static final String FIND_BY_LAST_DATE = "SELECT user_test.test_id , user_test.end_date , user_test.points,user_test.user_id ,user_test.test_id FROM user_test INNER JOIN tests ON tests.test_id  = user_test.test_id where tests.test_id = ? and user_test.user_id = ? ORDER BY user_test.end_date  DESC LIMIT 1";
+    private static final String FIND_BY_LAST_DATE = "SELECT user_test.test_id , user_test.end_date , user_test.points,user_test.pass,user_test.user_id ,user_test.test_id FROM user_test INNER JOIN tests ON tests.test_id  = user_test.test_id where tests.test_id = ? and user_test.user_id = ? ORDER BY user_test.end_date  DESC LIMIT 1";
 
     @Override
     public UserTest insert(UserTest item) throws DaoException {
@@ -70,14 +70,16 @@ public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
         userTest.setId(resultSet.getInt(1));
         userTest.setEndDate(resultSet.getTimestamp(2));
         userTest.setPoints(resultSet.getInt(3));
+        userTest.setPass(resultSet.getInt(4));
         return userTest;
     }
 
     private PreparedStatement statementTest(PreparedStatement statement, UserTest item) throws SQLException {
         statement.setTimestamp(1, new Timestamp(item.getEndDate().getTime()));
         statement.setInt(2,item.getPoints());
-        statement.setInt(3 , item.getUser().getId());
-        statement.setInt(4 , item.getTest().getId());
+        statement.setInt(3 , item.getPass());
+        statement.setInt(4 , item.getUser().getId());
+        statement.setInt(5 , item.getTest().getId());
         return statement;
     }
 

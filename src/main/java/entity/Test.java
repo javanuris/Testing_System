@@ -11,8 +11,10 @@ import java.util.List;
 public class Test extends BaseEntity {
     private String name;
     private Integer timing;
-    private List<Question> questions = new ArrayList<>();
+    private Integer percentage;
 
+
+    private List<Question> questions = new ArrayList<>();
 
     public Integer getTiming() {
         return timing;
@@ -28,6 +30,14 @@ public class Test extends BaseEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getPercentage() {
+        return percentage;
+    }
+
+    public void setPercentage(Integer percentage) {
+        this.percentage = percentage;
     }
 
     public List<Question> getQuestions() {

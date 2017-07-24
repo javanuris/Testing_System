@@ -30,7 +30,6 @@ public class UserTestService {
         return userTest;
     }
 
-
     public UserTest findUserTestById(int id) {
         UserTest userTest = null;
         try (DaoFactory daoFactory = new DaoFactory()) {
@@ -57,10 +56,25 @@ public class UserTestService {
         return userTests;
     }
 
-    public void saveUserResult(User user, Result result, Answer answer) throws ServiceException {
+    public void saveUserResult(User user, Result result, Answer answer, int answerCount) throws ServiceException {
+        int pass = 0;
+        int precent = 0;
         TestService testService = new TestService();
         UserTest userTest = new UserTest();
         Test test = testService.findTestByAnswer(answer.getId());
+
+        if(result.getPointCount() <=0){
+
+        }else {
+             precent = percentageOfPoints(answerCount, result.getPointCount());
+        }
+
+        if(precent >= test.getPercentage()){
+            pass = 1;
+        }else{
+            pass = 0;
+        }
+
         if (test != null) {
             userTest.setTest(test);
         } else {
@@ -69,6 +83,8 @@ public class UserTestService {
         if (user != null) {
             userTest.setUser(user);
             userTest.setPoints(result.getPointCount());
+            userTest.setPass(pass);
+
         } else {
             throw new ServiceException("User can not be null");
         }
@@ -101,4 +117,9 @@ public class UserTestService {
             return false;
         }
     }
+
+    public int percentageOfPoints(int countQuestions , int countRightQuestions){
+        return (countRightQuestions*100)/countQuestions;
+    }
+
 }

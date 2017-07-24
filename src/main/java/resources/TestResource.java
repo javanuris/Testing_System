@@ -83,12 +83,12 @@ public class TestResource {
             try {
                 if (userTest != null) {
                     if (userTestService.checkRangeOfTimeFromLastTesting(test.getTiming() * ONE_HOUR, new Date(), userTest.getEndDate())) {
-                        userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT));
+                        userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT), answers.size());
                     } else {
                         return Response.status(Response.Status.BAD_REQUEST).entity("You have already passed the test, wait for the next session").build();
                     }
                 } else {
-                    userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT));
+                    userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT),answers.size());
                 }
             } catch (ServiceException e) {
                 e.printStackTrace();
