@@ -15,4 +15,3 @@ import java.lang.annotation.Target;
 @NameBinding
 public @interface Secured {
 }
-

@@ -56,22 +56,23 @@ public class UserTestService {
         return userTests;
     }
 
-    public void saveUserResult(User user, Result result, Answer answer, int answerCount) throws ServiceException {
+    public void saveUserResult(User user, Result result, Answer answer, int answerCount, UserTest userTestInfo) throws ServiceException {
         int pass = 0;
         int precent = 0;
         TestService testService = new TestService();
+
         UserTest userTest = new UserTest();
         Test test = testService.findTestByAnswer(answer.getId());
 
-        if(result.getPointCount() <=0){
+        if (result.getPointCount() <= 0) {
 
-        }else {
-             precent = percentageOfPoints(answerCount, result.getPointCount());
+        } else {
+            precent = percentageOfPoints(answerCount, result.getPointCount());
         }
 
-        if(precent >= test.getPercentage()){
+        if (precent >= test.getPercentage()) {
             pass = 1;
-        }else{
+        } else {
             pass = 0;
         }
 
@@ -84,7 +85,11 @@ public class UserTestService {
             userTest.setUser(user);
             userTest.setPoints(result.getPointCount());
             userTest.setPass(pass);
-
+            if(userTestInfo == null){
+                userTest.setAttempt(1);
+            }else{
+                userTest.setAttempt(userTestInfo.getAttempt() + 1);
+            }
         } else {
             throw new ServiceException("User can not be null");
         }
@@ -118,8 +123,42 @@ public class UserTestService {
         }
     }
 
-    public int percentageOfPoints(int countQuestions , int countRightQuestions){
-        return (countRightQuestions*100)/countQuestions;
+    private int percentageOfPoints(int countQuestions, int countRightQuestions) {
+        return (countRightQuestions * 100) / countQuestions;
     }
 
+    public Integer countByPassAttemptTest(int pass , int attempt, int testId){
+        Integer countByParameters = null;
+        Integer result = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                UserTestDao userTestDao = (UserTestDao) daoFactory.getDao(daoFactory.typeDao().getUserTestDao());
+
+                    countByParameters = userTestDao.countByPassAttemptTest(pass , attempt , testId);
+                if(countByParameters!=null || countByParameters>=1) {
+                    result = (countByParameters * 100) / countByTest(testId , attempt);
+
+                }else{
+                    result = 0;
+                }
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+
+    public Integer countByTest( int testId, int attempt){
+        Integer integer = null;
+
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                UserTestDao userTestDao = (UserTestDao) daoFactory.getDao(daoFactory.typeDao().getUserTestDao());
+                integer = userTestDao.countByTest(testId , attempt);
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return integer;
+    }
 }

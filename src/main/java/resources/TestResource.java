@@ -22,7 +22,7 @@ import java.util.List;
 @Path("/")
 public class TestResource {
 
-    private static final int ONE_HOUR = 60 * 60 * 1000;
+    private static final int ONE_HOUR =  60*60*1000;
     private static final int AVAILABLE_TEST_TRUE = 1;
     private static final int AVAILABLE_TEST_FALSE = 0;
     private static final int FIRST_ELEMENT = 0;
@@ -83,12 +83,12 @@ public class TestResource {
             try {
                 if (userTest != null) {
                     if (userTestService.checkRangeOfTimeFromLastTesting(test.getTiming() * ONE_HOUR, new Date(), userTest.getEndDate())) {
-                        userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT), answers.size());
+                        userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT), answers.size(), userTest);
                     } else {
                         return Response.status(Response.Status.BAD_REQUEST).entity("You have already passed the test, wait for the next session").build();
                     }
                 } else {
-                    userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT),answers.size());
+                    userTestService.saveUserResult(user, result, answers.get(FIRST_ELEMENT),answers.size(), userTest);
                 }
             } catch (ServiceException e) {
                 e.printStackTrace();

@@ -15,4 +15,9 @@ public interface UserTestDao  extends Dao<UserTest> {
    List<UserTest> findUserTestByUser(User user) throws DaoException;
 
    UserTest findUserTestByLastTest(Test test , User user) throws DaoException;
+
+   Integer countByPassAttemptTest(int pass, int attempt, int testId) throws DaoException;
+
+   Integer countByTest(int testId, int attempt) throws DaoException;
+
 }

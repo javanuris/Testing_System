@@ -8,6 +8,8 @@ import entity.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by User on 18.07.2017.
@@ -19,12 +21,13 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
     private static final String INSERT = "INSERT INTO users VALUES (user_id,?,?,?,?,?,?,?)";
     private static final String FIND_BY_PHONE_PASSWORD = "SELECT * FROM users WHERE phone = ? AND password = ?";
     private static final String UPDATE = "UPDATE users SET phone = ?,password = ?,token= ?,first_name =? , last_name = ? profession= ?,role_id = ? WHERE user_id = ?";
+    private static final String SELECT_ALL = "SELECT * FROM users";
 
     @Override
     public User insert(User item) throws DaoException {
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(INSERT, PreparedStatement.RETURN_GENERATED_KEYS)) {
-                statementCustomer(statement, item);
+                statementUser(statement, item);
                 statement.executeUpdate();
                 try (ResultSet resultSet = statement.getGeneratedKeys()) {
                     resultSet.next();
@@ -45,7 +48,7 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
                 statement.setInt(1, id);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        user = itemCustomer(user, resultSet);
+                        user = itemUser(user, resultSet);
                     }
                 }
             }
@@ -60,7 +63,7 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
     public void update(User item) throws DaoException {
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(UPDATE)) {
-                statementCustomer(statement, item);
+                statementUser(statement, item);
                 statement.setInt(5, item.getId());
                 statement.executeUpdate();
             }
@@ -83,7 +86,7 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
                 statement.setString(2, password);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        user = itemCustomer(user, resultSet);
+                        user = itemUser(user, resultSet);
                     }
                 }
             }
@@ -101,7 +104,7 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
                 statement.setString(1, phone);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        user = itemCustomer(user, resultSet);
+                        user = itemUser(user, resultSet);
                     }
                 }
             }
@@ -119,7 +122,7 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
                 statement.setString(1, token);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     while (resultSet.next()) {
-                        user = itemCustomer(user, resultSet);
+                        user = itemUser(user, resultSet);
                     }
                 }
             }
@@ -129,8 +132,27 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
         return user;
     }
 
+    @Override
+    public List<User> getAllUsers() throws DaoException {
+        List<User> list = new ArrayList<>();
+        User user = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(SELECT_ALL)) {
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        user = itemUser(user, resultSet);
+                        list.add(user);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("can't get all city " + this.getClass().getSimpleName(), e);
+        }
+        return list;
+    }
 
-    private PreparedStatement statementCustomer(PreparedStatement statement, User item) throws SQLException {
+
+    private PreparedStatement statementUser(PreparedStatement statement, User item) throws SQLException {
         statement.setString(1, item.getPhone());
         statement.setString(2, item.getPassword());
         statement.setString(3, item.getToken());
@@ -141,7 +163,7 @@ public class MySqlUserDao extends BaseDao<User> implements UserDao {
         return statement;
     }
 
-    private User itemCustomer(User user, ResultSet resultSet) throws SQLException {
+    private User itemUser(User user, ResultSet resultSet) throws SQLException {
         user = new User();
         user.setId(resultSet.getInt(1));
         user.setPhone(resultSet.getString(2));

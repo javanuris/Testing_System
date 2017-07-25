@@ -20,9 +20,12 @@ import java.util.List;
  */
 public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
     private static final String FIND_BY_ID = "SELECT * FROM user_test WHERE user_test_id = ?";
-    private static final String INSERT = "INSERT INTO user_test VALUES(user_test_id,?,?,?,?,?)";
+    private static final String INSERT = "INSERT INTO user_test VALUES(user_test_id,?,?,?,?,?,?)";
     private static final String FIND_BY_USER = "SELECT * FROM user_test WHERE user_id = ?";
-    private static final String FIND_BY_LAST_DATE = "SELECT user_test.test_id , user_test.end_date , user_test.points,user_test.pass,user_test.user_id ,user_test.test_id FROM user_test INNER JOIN tests ON tests.test_id  = user_test.test_id where tests.test_id = ? and user_test.user_id = ? ORDER BY user_test.end_date  DESC LIMIT 1";
+    private static final String FIND_BY_TEST = "SELECT * FROM user_test WHERE test_id = ?";
+    private static final String FIND_BY_LAST_DATE = "SELECT user_test.test_id , user_test.end_date , user_test.points,user_test.pass,user_test.attempt,user_test.user_id ,user_test.test_id FROM user_test INNER JOIN tests ON tests.test_id  = user_test.test_id where tests.test_id = ? and user_test.user_id = ? ORDER BY user_test.end_date  DESC LIMIT 1";
+    private static final String COUNT_BY_PASS_ATTEMPT_TEST = "SELECT COUNT(*) FROM user_test where user_test.pass = ? and user_test.attempt = ? and user_test.test_id = ?;";
+    private static final String COUNT_BY_TEST = "SELECT COUNT(*) FROM user_test where user_test.test_id = ? and user_test.attempt = ?;";
 
     @Override
     public UserTest insert(UserTest item) throws DaoException {
@@ -60,31 +63,15 @@ public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
     }
 
     @Override
-    public void update(UserTest item) throws DaoException {}
-
-    @Override
-    public void delete(UserTest item) throws DaoException {}
-
-    private UserTest itemTest(UserTest userTest, ResultSet resultSet) throws SQLException {
-        userTest = new UserTest();
-        userTest.setId(resultSet.getInt(1));
-        userTest.setEndDate(resultSet.getTimestamp(2));
-        userTest.setPoints(resultSet.getInt(3));
-        userTest.setPass(resultSet.getInt(4));
-        return userTest;
-    }
-
-    private PreparedStatement statementTest(PreparedStatement statement, UserTest item) throws SQLException {
-        statement.setTimestamp(1, new Timestamp(item.getEndDate().getTime()));
-        statement.setInt(2,item.getPoints());
-        statement.setInt(3 , item.getPass());
-        statement.setInt(4 , item.getUser().getId());
-        statement.setInt(5 , item.getTest().getId());
-        return statement;
+    public void update(UserTest item) throws DaoException {
     }
 
     @Override
-    public List<UserTest> findUserTestByUser(User user) throws DaoException{
+    public void delete(UserTest item) throws DaoException {
+    }
+
+    @Override
+    public List<UserTest> findUserTestByUser(User user) throws DaoException {
         List<UserTest> userTests = new ArrayList<>();
         UserTest userTest = null;
         try {
@@ -103,8 +90,10 @@ public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
         return userTests;
     }
 
+
+
     @Override
-    public UserTest findUserTestByLastTest(Test test, User user) throws DaoException{
+    public UserTest findUserTestByLastTest(Test test, User user) throws DaoException {
         UserTest userTest = null;
         try {
             try (PreparedStatement statement = getConnection().prepareStatement(FIND_BY_LAST_DATE)) {
@@ -121,4 +110,64 @@ public class MySqlUserTestDao extends BaseDao<UserTest> implements UserTestDao {
         }
         return userTest;
     }
+
+    @Override
+    public Integer countByPassAttemptTest(int pass, int attempt, int testId) throws DaoException {
+       Integer integer = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(COUNT_BY_PASS_ATTEMPT_TEST)) {
+                statement.setInt(1, pass);
+                statement.setInt(2 ,attempt);
+                statement.setInt(3 , testId);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        integer =resultSet.getInt(1);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Can't find by parameters", e);
+        }
+        return integer;
+    }
+
+    @Override
+    public Integer countByTest(int testId , int attempt) throws DaoException {
+        Integer integer = null;
+        try {
+            try (PreparedStatement statement = getConnection().prepareStatement(COUNT_BY_TEST)) {
+                statement.setInt(1 , testId);
+                statement.setInt(2 , attempt);
+                try (ResultSet resultSet = statement.executeQuery()) {
+                    while (resultSet.next()) {
+                        integer =resultSet.getInt(1);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            throw new DaoException("Can't find by parameters", e);
+        }
+        return integer;
+    }
+
+    private UserTest itemTest(UserTest userTest, ResultSet resultSet) throws SQLException {
+        userTest = new UserTest();
+        userTest.setId(resultSet.getInt(1));
+        userTest.setEndDate(resultSet.getTimestamp(2));
+        userTest.setPoints(resultSet.getInt(3));
+        userTest.setPass(resultSet.getInt(4));
+        userTest.setAttempt(resultSet.getInt(5));
+        return userTest;
+    }
+
+    private PreparedStatement statementTest(PreparedStatement statement, UserTest item) throws SQLException {
+        statement.setTimestamp(1, new Timestamp(item.getEndDate().getTime()));
+        statement.setInt(2, item.getPoints());
+        statement.setInt(3, item.getPass());
+        statement.setInt(4, item.getAttempt());
+        statement.setInt(5, item.getUser().getId());
+        statement.setInt(6, item.getTest().getId());
+        return statement;
+    }
+
 }

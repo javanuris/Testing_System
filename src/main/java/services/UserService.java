@@ -116,4 +116,17 @@ public class UserService {
             throw new ServiceException("Registration can be null");
         }
     }
+
+    public List<User> getAllUsers(){
+        List<User> users = null;
+        try (DaoFactory daoFactory = new DaoFactory()) {
+            try {
+                UserDao userDao = (UserDao) daoFactory.getDao(daoFactory.typeDao().getUserDao());
+                users = userDao.getAllUsers();
+            } catch (DaoException e) {
+                e.printStackTrace();
+            }
+        }
+        return users;
+    }
 }

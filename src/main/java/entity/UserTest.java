@@ -11,6 +11,7 @@ public class UserTest extends BaseEntity{
     private Date endDate;
     private Integer points;
     private Integer pass;
+    private Integer attempt;
     private User user;
     private Test test;
 
@@ -52,5 +53,13 @@ public class UserTest extends BaseEntity{
 
     public void setPass(Integer pass) {
         this.pass = pass;
+    }
+
+    public Integer getAttempt() {
+        return attempt;
+    }
+
+    public void setAttempt(Integer attempt) {
+        this.attempt = attempt;
     }
 }
